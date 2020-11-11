@@ -22,6 +22,14 @@ class CampaignsController < ApplicationController
     render json: campaign, status: :ok
   end
 
+  def update
+    campaign = Campaign.find(params[:id])
+
+    if campaign.update(campaign_params)
+      render json: campaign.to_json, status: :ok
+    end
+  end
+
   private
 
   def campaign_params
