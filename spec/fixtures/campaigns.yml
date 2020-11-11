@@ -1,0 +1,11 @@
+campaign1:
+  name: 'By an earth more green'
+  description: 'The idea is that you could help to do about this world a better place'
+  start_at: '13/11/2022'
+  finish_at: '15/12/2022'
+
+campaign2:
+  name: 'Healty'
+  description: 'Improve your healt with our products'
+  start_at: '01/12/2021'
+  finish_at: '01/12/2022'
