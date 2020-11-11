@@ -1,0 +1,23 @@
+hotel1:
+  product_id: 1
+  value: 10_000
+  discount: 0.5
+  campaign: campaign1
+
+bus1:
+  product_id: 2
+  value: 5_000
+  discount: 0.5
+  campaign: campaign1
+
+hotel2:
+  product_id: 1
+  value: 5_000
+  discount: 0.75
+  campaign: campaign2
+
+bus2:
+  product_id: 2
+  value: 2_000
+  discount: 0.2
+  campaign: campaign2
