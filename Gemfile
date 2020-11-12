@@ -4,11 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'activerecord-sqlserver-adapter', '~> 6.0.0.rc2'
+# gem 'activerecord-sqlserver-adapter', '~> 6.0.0.rc2'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
-gem 'tiny_tds'
+gem 'ruby-oci8'
+gem 'activerecord-oracle_enhanced-adapter', '~> 6.0.0'
+# gem 'tiny_tds'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
