@@ -14,9 +14,9 @@ Things you may want to cover:
 
 To run this project with docker download the next packages in `vendor` folder from [Instant Client Downloads for Linux x86-64](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html#ic_x64_inst)
 
-* instantclient-basiclite-linux.x64-12.2.0.1.0.zip
-* instantclient-sdk-linux.x64-12.2.0.1.0.zip
-* instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
+* instantclient-basiclite-linux.x64-18.5.0.0.0dbru.zip
+* instantclient-sqlplus-linux.x64-18.5.0.0.0dbru.zip
+* instantclient-sdk-linux.x64-18.5.0.0.0dbru.zip
 
 ## Configuration
 
