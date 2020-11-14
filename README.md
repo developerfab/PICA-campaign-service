@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the campaign service project for PICA class from Javeriana University. This project is running with sqlserver.
 
-Things you may want to cover:
+##  Ruby version
 
-* Ruby version
+2.6.5
 
-* System dependencies
+## System dependencies
 
-* Configuration
+1. SQLServer
 
-* Database creation
+For run this in development environment you can run the sqlserver with docker, for more information you can visit [Quickstart: Run SQL Server container images with Docker](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash)
 
-* Database initialization
+2. [Tiny_tds](https://github.com/rails-sqlserver/tiny_tds)
+
+## Configure in localhost
+
+If you want run this project in localhost you should copy the `env.example` file and override the variables and run:
+
+* Configure the database
+
+```
+$ rails db:create db:migrate
+```
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ bundle exec rspec
+```
 
-* Deployment instructions
+## Configure with docker
 
-* ...
+If you want this project with docker, you can run
+
+```
+$ sh start.sh
+```
