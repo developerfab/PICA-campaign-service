@@ -3,8 +3,10 @@
 class CampaignsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
+  has_scope :filter_by_product_id
+
   def index
-    campaigns = Campaign.all
+    campaigns = apply_scopes(Campaign.all)
     render json: campaigns.to_json
   end
 
