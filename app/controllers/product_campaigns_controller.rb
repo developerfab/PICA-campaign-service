@@ -15,6 +15,15 @@ class ProductCampaignsController < ApplicationController
     end
   end
 
+  def destroy
+    product = ProductCampaign.where(campaign_id: params[:campaign_id], id: params[:id]).last
+    if product.delete
+      render json: product.to_json, status: :ok
+    else
+      render json: { errors: product.errors }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def product_campaign_params

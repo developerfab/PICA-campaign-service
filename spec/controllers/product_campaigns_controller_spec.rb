@@ -73,4 +73,25 @@ RSpec.describe ProductCampaignsController, type: :request do
       end
     end
   end
+
+  describe '#delete' do
+    context 'when the product exist'
+      let(:campaign) { campaigns(:campaign1) }
+      let(:product_1) { product_campaigns(:hotel1) }
+      let(:response_body) { JSON.parse(response.body) }
+
+      before do
+        delete campaign_product_campaign_path(campaign_id: campaign.id, id: product_1.id)
+      end
+
+      it 'returns the object deleted' do
+        expect(response_body).to include('campaign_id')
+        expect(response_body).to include('created_at')
+        expect(response_body).to include('discount')
+        expect(response_body).to include('id')
+        expect(response_body).to include('product_id')
+        expect(response_body).to include('updated_at')
+        expect(response_body).to include('value')
+      end
+  end
 end
