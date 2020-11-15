@@ -2,15 +2,17 @@ require 'rails_helper'
 
 RSpec.describe CampaignsController, type: :controller do
   describe '#index' do
-    let(:campaigns) { Campaign.all }
-    let(:response_body) { JSON.parse(response.body) }
+    context 'when list all campaigns' do
+      let(:campaigns) { Campaign.all }
+      let(:response_body) { JSON.parse(response.body) }
 
-    before do
-      get :index
-    end
+      before do
+        get :index
+      end
 
-    it 'returns the expected account of campaigns' do
-      expect(response_body.count).to eq campaigns.count
+      it 'returns the expected account of campaigns' do
+        expect(response_body.count).to eq campaigns.count
+      end
     end
   end
 

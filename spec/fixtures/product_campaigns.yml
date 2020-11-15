@@ -10,6 +10,12 @@ bus1:
   discount: 0.5
   campaign: campaign1
 
+restaurant1:
+  product_id: 7
+  value: 20_000
+  discount: 0.5
+  campaign: campaign1
+
 hotel2:
   product_id: 1
   value: 5_000

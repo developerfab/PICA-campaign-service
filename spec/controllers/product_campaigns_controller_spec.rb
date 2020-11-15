@@ -9,7 +9,7 @@ RSpec.describe ProductCampaignsController, type: :request do
       get campaign_product_campaigns_path(campaign_id: campaign.id)
     end
 
-    it { expect(response_body.count).to eq(2) }
+    it { expect(response_body.count).to eq(campaign.product_campaigns.count) }
 
     it 'returns the products of the campaign' do
       response_body.each do |product|

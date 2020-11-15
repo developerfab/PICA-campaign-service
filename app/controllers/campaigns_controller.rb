@@ -4,6 +4,7 @@ class CampaignsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   has_scope :filter_by_product_id
+  has_scope :filter_by_frame
 
   def index
     campaigns = apply_scopes(Campaign.all)
