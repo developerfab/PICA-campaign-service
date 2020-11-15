@@ -11,7 +11,7 @@ default: &default
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
   port: <%= ENV['DATABASE_PORT'] %>
-  timeout: 5000
+  timeout: 0
 
 development:
   <<: *default

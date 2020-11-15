@@ -9,6 +9,7 @@ RUN gem install bundler
 
 RUN bundle install
 ADD . /app
+CMD ["source", ".env"]
 
 CMD ./rails db:setup db:migrate
 
