@@ -7,7 +7,7 @@ class CampaignsController < ApplicationController
   has_scope :filter_by_frame
 
   def index
-    campaigns = apply_scopes(Campaign.all)
+    campaigns = apply_scopes(Campaign).all
     render json: campaigns.to_json
   end
 
