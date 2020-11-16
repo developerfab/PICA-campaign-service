@@ -81,7 +81,7 @@ RSpec.describe ProductCampaignsController, type: :request do
       let(:response_body) { JSON.parse(response.body) }
 
       before do
-        delete campaign_product_campaign_path(campaign_id: campaign.id, id: product_1.id)
+        delete campaign_product_campaign_path(campaign_id: campaign.id, id: product_1.product_id)
       end
 
       it 'returns the object deleted' do
@@ -93,5 +93,31 @@ RSpec.describe ProductCampaignsController, type: :request do
         expect(response_body).to include('updated_at')
         expect(response_body).to include('value')
       end
+  end
+
+  describe '#show' do
+    context 'when the product exist' do
+      let(:campaign) { campaigns(:campaign1) }
+      let(:product_1) { product_campaigns(:hotel1) }
+      let(:response_body) { JSON.parse(response.body) }
+
+      before do
+        get campaign_product_campaign_path(campaign_id: campaign.id, id: product_1.product_id)
+      end
+
+      it { expect(response).to have_http_status(200) }
+
+      it 'returns the product information' do
+        expect(response_body).to include('campaign_id')
+        expect(response_body).to include('created_at')
+        expect(response_body).to include('discount')
+        expect(response_body).to include('id')
+        expect(response_body).to include('product_id')
+        expect(response_body).to include('updated_at')
+        expect(response_body).to include('value')
+      end
+    end
+
+    context "when the product doesn't exist"
   end
 end

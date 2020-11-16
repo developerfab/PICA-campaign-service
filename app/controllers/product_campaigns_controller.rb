@@ -15,8 +15,11 @@ class ProductCampaignsController < ApplicationController
     end
   end
 
+  def show
+    render json: product.to_json, status: :ok
+  end
+
   def destroy
-    product = ProductCampaign.where(campaign_id: params[:campaign_id], id: params[:id]).last
     if product.delete
       render json: product.to_json, status: :ok
     else
@@ -28,5 +31,9 @@ class ProductCampaignsController < ApplicationController
 
   def product_campaign_params
     params.require(:products_campaign).permit(:campaign_id, :product_id, :value, :discount)
+  end
+
+  def product
+    @product ||= ProductCampaign.where(campaign_id: params[:campaign_id], product_id: params[:id]).last
   end
 end
